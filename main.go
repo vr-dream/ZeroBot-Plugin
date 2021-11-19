@@ -39,7 +39,7 @@ import (
 
 	// b站相关
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_bilibili" // 查询b站用户信息
-	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_diana"    // 嘉心糖发病
+	// _ "github.com/FloatTech/ZeroBot-Plugin/plugin_diana"    // 嘉心糖发病
 
 	// 二次元图片
 	_ "github.com/FloatTech/ZeroBot-Plugin/plugin_acgimage"     // 随机图片与AI点评
@@ -78,7 +78,7 @@ func init() {
 	// g := flag.Bool("g", false, "Enable web gui.")
 
 	// 直接写死 AccessToken 时，请更改下面第二个参数
-	token = flag.String("t", "", "Set AccessToken of WSClient.")
+	token = flag.String("t", "1145141919810", "Set AccessToken of WSClient.")
 	// 直接写死 URL 时，请更改下面第二个参数
 	url = flag.String("u", "ws://127.0.0.1:6700", "Set Url of WSClient.")
 
@@ -119,12 +119,12 @@ func main() {
 		})
 	zero.RunAndBlock(
 		zero.Config{
-			NickName:      []string{"椛椛", "ATRI", "atri", "亚托莉", "アトリ"},
+			NickName:      []string{"唐可可"},
 			CommandPrefix: "/",
 			// SuperUsers 某些功能需要主人权限，可通过以下两种方式修改
 			// "12345678", "87654321"：通过代码写死的方式添加主人账号
 			// flag.Args()：通过命令行参数的方式添加主人账号，无需修改下方任何代码
-			SuperUsers: append([]string{"12345678", "87654321"}, flag.Args()...),
+			SuperUsers: append([]string{"3089776396"}, flag.Args()...),
 			Driver:     []zero.Driver{driver.NewWebSocketClient(*url, *token)},
 		},
 	)
